@@ -4,7 +4,6 @@
 
   imports = [
     /etc/nixos/hardware-configuration.nix
-    ./neeraj.nix
   ];
 
   boot = {
@@ -112,7 +111,30 @@
     };
   };
 
-  environment.systemPackages = with pkgs; [ ];
+  # User settings
+  users.users.neeraj = {
+    isNormalUser = true;
+    description = "Neeraj";
+    extraGroups = [ "networkmanager" "wheel" "libvirtd" ];
+    packages = with pkgs; appendAppList [ ];
+  };
+
+  environment.systemPackages = with pkgs; [
+    alacritty
+    dmenu
+    git
+    gnome.gnome-keyring
+    networkmanagerapplet
+    nitrogen
+    pasystray
+    picom
+    polkit_gnome
+    pulseaudioFull
+    rofi
+    vim
+    unrar
+    unzip
+  ];
 
   programs = {
     thunar.enable = true;
