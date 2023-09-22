@@ -97,6 +97,7 @@
     dmenu
     git
     gnome.gnome-keyring
+    nerdfonts
     networkmanagerapplet
     nitrogen
     pasystray
