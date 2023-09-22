@@ -6,36 +6,7 @@
     /etc/nixos/hardware-configuration.nix
   ];
 
-  boot = {
-    blacklistedKernelModules = [ "snd_pcsp" ];
-    kernelPackages = pkgs.linuxPackages_latest;
-    tmp.cleanOnBoot = true;
-    loader = {
-      # systemd-boot.enable = true;
-      efi.canTouchEfiVariables = true;
-      grub = {
-        enable = true;
-        copyKernels = true;
-        # efiInstallAsRemovable = true;
-        efiSupport = true;
-        # fsIdentifier = "label";
-        # splashImage = ./backgrounds/grub-nixos-3.png;
-        # splashMode = "stretch";
-        devices = [ "nodev" ];
-        extraEntries = ''
-          menuentry "Reboot" {
-            reboot
-          }
-          menuentry "Poweroff" {
-            halt
-          }
-        '';
-      };
-    };
-    supportedFilesystems = [
-      "ntfs"
-    ];
-  };
+  # paste your boot config here...
 
   networking = {
     firewall = {
@@ -116,7 +87,9 @@
     isNormalUser = true;
     description = "Neeraj";
     extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [ ];
+    packages = with pkgs; [
+      brave
+    ];
   };
 
   environment.systemPackages = with pkgs; [
