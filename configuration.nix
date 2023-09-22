@@ -32,7 +32,7 @@
       LC_PAPER = "en_IN";
       LC_TELEPHONE = "en_IN";
       LC_TIME = "en_IN";
-      LC_CTYPE="en_US.utf8"; # required by dmenu
+      LC_CTYPE="en_US.utf8"; # required by dmenu don't change this
     };
   };
 
@@ -64,7 +64,7 @@
     };
     gvfs.enable = true;
     gnome.gnome-keyring.enable = true;
-    blueman.enable = true; # enable while using blueman
+    blueman.enable = true;
     pipewire = {
       enable = true;
       alsa = {
@@ -89,6 +89,7 @@
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
       brave
+      xarchiver
     ];
   };
 
