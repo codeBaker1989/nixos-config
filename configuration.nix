@@ -115,8 +115,8 @@
   users.users.neeraj = {
     isNormalUser = true;
     description = "Neeraj";
-    extraGroups = [ "networkmanager" "wheel" "libvirtd" ];
-    packages = with pkgs; appendAppList [ ];
+    extraGroups = [ "networkmanager" "wheel" ];
+    packages = with pkgs; [ ];
   };
 
   environment.systemPackages = with pkgs; [
