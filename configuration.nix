@@ -18,6 +18,7 @@
     networkmanager.enable = true;
   };
 
+  # edit as per your location and timezone
   time.timeZone = "Asia/Kolkata";
   i18n = {
     defaultLocale = "en_IN";
@@ -42,7 +43,6 @@
       layout = "us";
       xkbVariant = "";
       enable = true;
-      # windowManager.qtile.enable = true;
       windowManager.i3 = {
         enable = true;
         extraPackages = with pkgs; [
@@ -82,10 +82,10 @@
     };
   };
 
-  # User settings
+  # Edit the username below (replace 'neeraj')
   users.users.neeraj = {
     isNormalUser = true;
-    description = "Neeraj";
+    description = "neeraj";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
       brave
@@ -136,8 +136,6 @@
       };
     };
   };
-
-  virtualisation.libvirtd.enable = true;
   
   hardware = {
     bluetooth.enable = true;
