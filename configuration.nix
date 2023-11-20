@@ -1,18 +1,10 @@
 { inputs,config, pkgs, ... }:
 
 {
-
   imports = [
     /etc/nixos/hardware-configuration.nix
-    inputs.home-manager.nixosModules.home-manager
+    <home-manager/nixos>
   ];
-
-   home-manager = {
-    extraSpecialArgs = { inherit inputs; };
-    users = {
-      willem = import ./home.nix;
-    };
-  }; 
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -100,6 +92,11 @@
     ];
   };
 
+  home-manager = {
+    useGlobalPkgs = true;
+    useUserPackages = true;
+    users.willem = import /etc/nixos/home.nix;
+  };
 
   environment.systemPackages = with pkgs; [
     alacritty
