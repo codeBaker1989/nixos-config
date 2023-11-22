@@ -102,7 +102,6 @@
     alacritty
     gtk3
     dmenu
-    git
     gnome.gnome-keyring
     nerdfonts
     networkmanagerapplet
@@ -140,6 +139,7 @@
   programs = {
     thunar.enable = true;
     dconf.enable = true;
+    zsh.enable = true;
   };
 
   security = {
@@ -167,6 +167,9 @@
   hardware = {
     bluetooth.enable = true;
   };
+
+  users.users.willem.shell = pkgs.zsh;
+  environment.shells = with pkgs; [ zsh ];
 
   # Don't touch this
   system.stateVersion = "23.05";
