@@ -20,7 +20,7 @@
   };
 
   # edit as per your location and timezone
-  time.timeZone = "Amsterdam/Europe";
+  time.timeZone = "Europe/Amsterdam";
   i18n = {
     defaultLocale = "en_IN";
     extraLocaleSettings = {
@@ -120,6 +120,7 @@
     firefox
     php
     zsh
+    glibcLocales
     telegram-desktop
     (vscode-with-extensions.override {
      vscode = vscodium;
