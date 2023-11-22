@@ -74,6 +74,7 @@
       };
       pulse.enable = true;
     };
+    openssh.enable = true;
   };
 
   nixpkgs = {
@@ -90,6 +91,7 @@
     packages = with pkgs; [
       xarchiver
     ];
+    shell = pkgs.zsh;
   };
 
   home-manager = {
@@ -117,6 +119,7 @@
     mysql
     firefox
     php
+    zsh
     telegram-desktop
     (vscode-with-extensions.override {
      vscode = vscodium;
@@ -168,8 +171,6 @@
     bluetooth.enable = true;
   };
 
-  users.users.willem.shell = pkgs.zsh;
-  environment.shells = with pkgs; [ zsh ];
 
   # Don't touch this
   system.stateVersion = "23.05";
